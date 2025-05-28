@@ -2,7 +2,9 @@
 
 A modern, secure blockchain-based voting application built with Next.js, TypeScript, and ethers.js. This DApp allows users to participate in transparent, tamper-proof elections on the Ethereum blockchain.
 
-![Voting DApp Screenshot](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=Voting+DApp+Interface)
+Visit: [here](https://voting-system-d-app.vercel.app/)
+
+![Voting DApp Screenshot](https://github.com/NeelBareja/Voting-System-dAPP/blob/main/Voting%20System%20Dapp.png)
 
 ## 🌟 Features
 
@@ -42,18 +44,18 @@ Before you begin, ensure you have the following installed:
 
 ### 1. Clone the Repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/voting-dapp.git
 cd voting-dapp
-\`\`\`
+```
 
 ### 2. Install Dependencies
 
-\`\`\`bash
+```bash
 npm install
 # or
 yarn install
-\`\`\`
+```
 
 ### 3. Deploy the Smart Contract
 
@@ -63,7 +65,7 @@ yarn install
 2. Create a new file \`VotingSystemBytes32.sol\`
 3. Copy and paste the contract code:
 
-\`\`\`solidity
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
@@ -115,7 +117,7 @@ contract VotingSystemBytes32 {
         return candidates.length;
     }
 }
-\`\`\`
+```
 
 4. Compile the contract (Solidity version 0.8.26)
 5. Deploy to your preferred network (Sepolia testnet recommended)
@@ -123,10 +125,10 @@ contract VotingSystemBytes32 {
 
 #### Option B: Using Hardhat
 
-\`\`\`bash
+```bash
 npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox
 npx hardhat init
-\`\`\`
+```
 
 Follow the Hardhat deployment guide and deploy to your preferred network.
 
@@ -135,17 +137,17 @@ Follow the Hardhat deployment guide and deploy to your preferred network.
 1. Open \`app/page.tsx\`
 2. Replace the \`CONTRACT_ADDRESS\` with your deployed contract address:
 
-\`\`\`typescript
+```typescript
 const CONTRACT_ADDRESS = "0xYourContractAddressHere"
-\`\`\`
+```
 
 ### 5. Run the Development Server
 
-\`\`\`bash
+```bash
 npm run dev
 # or
 yarn dev
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -155,11 +157,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Create a \`.env.local\` file for additional configuration:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourContractAddress
 NEXT_PUBLIC_NETWORK_NAME=sepolia
 NEXT_PUBLIC_CHAIN_ID=11155111
-\`\`\`
+```
 
 ### Network Configuration
 
@@ -188,7 +190,7 @@ The app works with any Ethereum-compatible network. Popular choices:
 
 ## 🏗️ Project Structure
 
-\`\`\`
+```
 voting-dapp/
 ├── app/
 │   ├── globals.css          # Global styles
@@ -213,7 +215,7 @@ voting-dapp/
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── README.md
-\`\`\`
+```
 
 ## 🔍 Key Components Explained
 
@@ -221,7 +223,7 @@ voting-dapp/
 
 The app uses \`ethers.BrowserProvider\` for blockchain interaction:
 
-\`\`\`typescript
+```typescript
 // Connect to MetaMask
 const provider = new ethers.BrowserProvider(window.ethereum)
 
@@ -230,13 +232,13 @@ const signer = await provider.getSigner()
 
 // Create contract instance
 const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer)
-\`\`\`
+```
 
 ### Bytes32 Conversion
 
 Candidate names are converted to bytes32 for efficient storage:
 
-\`\`\`typescript
+```typescript
 // Convert string to bytes32 (lowercase)
 const stringToBytes32 = (str: string): string => {
   return ethers.encodeBytes32String(str.toLowerCase())
@@ -246,7 +248,7 @@ const stringToBytes32 = (str: string): string => {
 const bytes32ToString = (bytes32: string): string => {
   return ethers.decodeBytes32String(bytes32)
 }
-\`\`\`
+```
 
 ## 🧪 Testing
 
@@ -315,15 +317,15 @@ If transactions are slow or failing:
 
 ### Deploy to Netlify
 
-1. Build the project: \`npm run build\`
-2. Upload the \`out\` folder to Netlify
+1. Build the project: `npm run build`
+2. Upload the `out` folder to Netlify
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch: \`git checkout -b feature/amazing-feature\`
-3. Commit your changes: \`git commit -m 'Add amazing feature'\`
-4. Push to the branch: \`git push origin feature/amazing-feature\`
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
 ## 📄 License
@@ -342,10 +344,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/voting-dapp/issues) page
+1. Check the [Issues](https://github.com/NeelBareja/Voting-System-dAPP/issues) page
 2. Create a new issue with detailed information
-3. Join our [Discord](https://discord.gg/yourdiscord) for community support
-
 ---
 
 **Happy Voting! 🗳️**
